@@ -23,9 +23,9 @@
                     <input type="submit" id="submit" name="submit">
                 <label for="selector">Orientación</label>
                     <select name="orientacion" id="orientacion">
-                            <option value="todas">Todas</option>
-                            <option value="horizontales">Horizontales</option>
-                            <option value="verticales">Verticales</option>
+                            <option value="">Todas</option>
+                            <option value="landscape">Horizontales</option>
+                            <option value="portrait">Verticales</option>
                     </select>
             </form>
         </section>
@@ -39,7 +39,11 @@
         <article id="categoria1" class="categorias">
             
             <div id="contenedor1">
-                <img id="front1" class="fotosCategoria"  alt="Paisaje montañas">
+
+                
+
+                <img id="front1" class="fotosCategoria" data-categoria="mountain">
+
             </div>
 
             <h2 id="titulo1" class="titulosFoto">Montaña</h2>
@@ -49,7 +53,11 @@
         <article id="categoria2" class="categorias">
             
             <div id="contenedor2">
-                <img id="front2" class="fotosCategoria" alt="atardecer en el mar">
+
+               
+
+                <img id="front2" class="fotosCategoria" data-categoria="ocean">
+
             </div>
 
             <h2 id="titulo2" class="titulosFoto">Mar</h2>
@@ -60,7 +68,10 @@
 
             <div id="contenedor3">
 
-                 <img id="front3" class="fotosCategoria"  alt="carretera hacia montaña con nuber">
+
+                
+
+                 <img id="front3" class="fotosCategoria" data-categoria="road">
 
              
 
@@ -73,8 +84,14 @@
 
  <!-- - - - - - - -GALERIAS- - - - - - - - - -->
     <section>
+
         <h2 id="tituloGaleria">Galeria de imagenes</h2>
         <article id="galeria" class="galeria">
+
+      
+        <article id="galeria" class="galeria">
+            
+            
 
 
         </article>
