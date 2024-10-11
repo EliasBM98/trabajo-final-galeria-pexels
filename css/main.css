@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
 /*---------------HEADER---------------*/
 #header{
     position:relative;
@@ -12,8 +14,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    
-    
+    justify-content: center;
+   
 }
 
 #contenidosHeader{
@@ -56,8 +58,6 @@
 
 #coleccionCategorias > * {
     display: flex;
-
-      
 }
 
 
@@ -67,9 +67,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    
-    
-    
+  
 }
 
 
@@ -88,12 +86,44 @@
 .titulosFoto{
     display: flex;
     align-items: end;
-    
-    
-    
+  
 }
 
 
+
+/*---------------GALERIA---------------*/
+.galeria{
+    width: 100vw;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px; 
+
+}
+
+
+.galeria > * {
+    border-radius: 5px;
+
+}
+
+
+#tituloGaleria{
+    text-align: center;
+    margin: 10px;
+}
+
+/*---------------PAGINACION---------------*/
+.paginacion{
+    background-color:rgb(57, 139, 211);
+    text-align: center;
+
+}
+.pagina{
+  list-style-type: none;
+  display: inline-block;
+}
 
 
 
@@ -102,10 +132,13 @@
 
 /*---------------768px---------------*/
 @media screen and (min-width: 768px){
-#coleccionCategorias{
-    flex-direction: column;
+    #coleccionCategorias{
+        flex-direction: column;
+    }
+    .galeria{
+        
+    }
 
-}
 }
 
 /*768px*/
@@ -114,7 +147,9 @@
 @media screen and (min-width: 992px){
     #coleccionCategorias{
         flex-direction: row;
-    
+    }
+    .galeria{
+        
     }
 
 }
@@ -125,7 +160,9 @@
 @media screen and (min-width: 1200px){
     #coleccionCategorias{
         flex-direction: row;
-    
+    }
+    .galeria{
+
     }
 
 }
