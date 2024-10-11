@@ -23,9 +23,9 @@
                     <input type="submit" id="submit" name="submit">
                 <label for="selector">Orientación</label>
                     <select name="orientacion" id="orientacion">
-                            <option value="todas">Todas</option>
-                            <option value="horizontales">Horizontales</option>
-                            <option value="verticales">Verticales</option>
+                            <option value="">Todas</option>
+                            <option value="landscape">Horizontales</option>
+                            <option value="portrait">Verticales</option>
                     </select>
             </form>
         </section>
@@ -39,7 +39,7 @@
         <article id="categoria1" class="categorias">
             
             <div id="contenedor1">
-                <img id="front1" class="fotosCategoria">
+                <img id="front1" class="fotosCategoria" data-categoria="mountain">
             </div>
 
             <h2 id="titulo1" class="titulosFoto">Montaña</h2>
@@ -49,7 +49,7 @@
         <article id="categoria2" class="categorias">
             
             <div id="contenedor2">
-                <img id="front2" class="fotosCategoria">
+                <img id="front2" class="fotosCategoria" data-categoria="ocean">
             </div>
 
             <h2 id="titulo2" class="titulosFoto">Mar</h2>
@@ -60,7 +60,7 @@
 
             <div id="contenedor3">
 
-                 <img id="front3" class="fotosCategoria" src="assets/horizontales/5.jpg">
+                 <img id="front3" class="fotosCategoria" data-categoria="road">
 
              
 

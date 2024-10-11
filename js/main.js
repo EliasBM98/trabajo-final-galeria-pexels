@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded",()=>{
 const buscador=document.querySelector("#busqueda");
 const btnSubmit=document.querySelector("#submit");
 
+const orientacion=document.querySelector("#orientacion");
+
 const contDescrip=document.querySelector("#coleccionCategorias");
 
 const fotoCat1=document.querySelector("#front1");//montaña
@@ -18,7 +20,8 @@ const urlInicioCarretera="photos/56832";
 
 contDescrip.addEventListener("click",(ev)=>{
     if(ev.target.matches(`img`)){
-        let id=ev.target.id;
+        let id=ev.target.dataset.categoria;
+        console.log({id});
         pintarGaleriaDes(id,"descripcion");
     }
 })
@@ -27,6 +30,10 @@ btnSubmit.addEventListener("click",(ev)=>{
     ev.preventDefault();
     let id = buscador.value;
     pintarGaleriaDes(id,"buscador");
+})
+
+orientacion.addEventListener("change",(ev)=>{
+    console.log(ev.target.value);
 })
 
     //Conexion a la API, recibiendo las diferentes urls
@@ -79,17 +86,16 @@ btnSubmit.addEventListener("click",(ev)=>{
 
     const pintarGaleriaDes=async (id,lugar)=>{
     
-        let urlBusqueda="";
-        if(id==fotoCat1.id){
-            urlBusqueda="search/?page=4&per_page=15&query=Mountain";
+        let urlBusqueda=`search/?page=4&per_page=25&query=${id}`;
+       /* if(id==fotoCat1.id){
+            urlBusqueda="search/?page=4&per_page=25&query=Mountain";
         }else if(id==fotoCat2.id){
-            urlBusqueda="search/?page=4&per_page=15&query=Ocean";
+            urlBusqueda="search/?page=4&per_page=25&query=Ocean";
         }else if(id==fotoCat3.id){
-            urlBusqueda="search/?page=4&per_page=15&query=Road";
+            urlBusqueda="search/?page=4&per_page=25&query=Road";
         }else if(lugar=="buscador"){
-            id=id[0].toUpperCase()+id.substring(1);
-            urlBusqueda=`search/?page=4&per_page=15&query=${id}`;
-        }
+            urlBusqueda=`search/?page=4&per_page=25&query=${id}`;
+        }*/
         
 
         try{
@@ -101,7 +107,7 @@ btnSubmit.addEventListener("click",(ev)=>{
 
             photos.forEach((photo)=>{
                 galeria.innerHTML+=`
-                <img src="${photo.src.tiny}">`
+                <img src="${photo.src.small}">`
             })
 
         }catch(error){
