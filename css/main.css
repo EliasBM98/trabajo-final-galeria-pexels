@@ -1,0 +1,59 @@
+/*-------------GLOBALES---------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*---------------HEADER---------------*/
+
+#header {
+    width: 100vw;
+   position: relative;
+}
+
+#tituloGaleria{
+    position: relative;
+
+}
+
+#barraBusqueda{
+    position: relative;
+
+}
+
+#fotoheader{
+    max-width: 100%;
+    position: absolute;
+    top: 0px;
+}
+/*---------------CATEGORIAS---------------*/
+#coleccionCategorias{
+    position: relative;
+    top: 20vw;
+
+}
+
+
+
+/*---------------768px---------------*/
+@media screen and (min-width: 768px){
+
+}
+
+/*768px*/
+
+/*---------------992px---------------*/
+@media screen and (min-width: 992px){
+
+}
+
+/*992px*/
+
+/*---------------1200px---------------*/
+@media screen and (min-width: 1200px){
+
+}
+
+/*1200px*/
+
+
