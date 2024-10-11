@@ -1,9 +1,24 @@
 document.addEventListener("DOMContentLoaded",()=>{
 
-const contenedorCategorias=document.querySelector("#coleccionCategorias");
+const contDescrip=document.querySelector("#coleccionCategorias");
+
+const fotoCat1=document.querySelector("#front1");//montaña
+const fotoCat2=document.querySelector("#front2");//mar
+const fotoCat3=document.querySelector("#front3");//carretera
+
+const galeria=document.querySelector("#galeria");
 
 const urlBase="https://api.pexels.com/v1";
-const urlInicio="curated?page=1&per_page=3";
+const urlInicioMar="photos/189349";
+const urlInicioMontaña="photos/417173";
+const urlInicioCarretera="photos/56832";
+
+contDescrip.addEventListener("click",(ev)=>{
+    if(ev.target.matches(`img`)){
+        let id=ev.target.id;
+        pintarGaleriaDes(id);
+    }
+})
 
     //Conexion a la API, recibiendo las diferentes urls
     const conexion=async(url,method='GET')=>{
@@ -26,28 +41,63 @@ const urlInicio="curated?page=1&per_page=3";
     }
 
     //funcion para 
-    const pintarTabla=async (item)=>{
+    const pintarTablaVacia=async (item)=>{
         try{
             //const recibido=`search?query=${busqueda}`;
-            //pintarTabla("Ocean")
-            //const res = await conexion(recibido);
 
             const res = await conexion(item);
-
-            //res.photos[0].src.large
-            const aux= res.photos;
-            console.log(aux[0].src.landscape);
-            console.log(aux[1].src.landscape);
-            console.log(aux[2].src.landscape);
-            //console.log({res});
-
-            
            
+           // console.log(res.id+" prueba")
+            //console.log(res.src.medium);
+            //res.photos[0].src.large
+            //const aux= res.photos;
+            //console.log(aux[0].src.landscape);
+            //console.log(aux[1].src.landscape);
+            //console.log(aux[2].src.landscape);
+
+            if(res.id==417173){
+                fotoCat1.src=res.src.medium;
+            }else if(res.id==189349){
+                fotoCat2.src=res.src.medium;
+            }else if(res.id==56832){
+                fotoCat3.src=res.src.medium;
+            }
         }catch(error){
             console.log(error.message);
         }
     }
 
-    pintarTabla(urlInicio);
+    const pintarGaleriaDes=async (id)=>{
+        let urlBusqueda="";
+        if(id==fotoCat1.id){
+            urlBusqueda="search?query=Mountain";
+        }else if(id==fotoCat2.id){
+            urlBusqueda="search?query=Ocean";
+        }else if(id==fotoCat3.id){
+            urlBusqueda="search?query=Road";
+        }
+
+        try{
+          
+            const res=await conexion(urlBusqueda);
+            const{photos}=res
+
+            galeria.innerHTML=``;
+
+            photos.forEach((photo)=>{
+                console.log(photo.src.tiny);
+                galeria.innerHTML+=`
+                <img src="${photo.src.tiny}">`
+            })
+
+        }catch(error){
+            console.log(error.message);
+        }
+
+    }
+
+    pintarTablaVacia(urlInicioMar);
+    pintarTablaVacia(urlInicioMontaña);
+    pintarTablaVacia(urlInicioCarretera);
 
     })//LOAD
