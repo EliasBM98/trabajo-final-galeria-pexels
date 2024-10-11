@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded",()=>{
 
+const buscador=document.querySelector("#busqueda");
+const btnSubmit=document.querySelector("#submit");
+
 const contDescrip=document.querySelector("#coleccionCategorias");
 
 const fotoCat1=document.querySelector("#front1");//montaña
@@ -16,8 +19,14 @@ const urlInicioCarretera="photos/56832";
 contDescrip.addEventListener("click",(ev)=>{
     if(ev.target.matches(`img`)){
         let id=ev.target.id;
-        pintarGaleriaDes(id);
+        pintarGaleriaDes(id,"descripcion");
     }
+})
+
+btnSubmit.addEventListener("click",(ev)=>{
+    ev.preventDefault();
+    let id = buscador.value;
+    pintarGaleriaDes(id,"buscador");
 })
 
     //Conexion a la API, recibiendo las diferentes urls
@@ -54,6 +63,7 @@ contDescrip.addEventListener("click",(ev)=>{
             //console.log(aux[0].src.landscape);
             //console.log(aux[1].src.landscape);
             //console.log(aux[2].src.landscape);
+            //console.log({res});
 
             if(res.id==417173){
                 fotoCat1.src=res.src.medium;
@@ -67,15 +77,20 @@ contDescrip.addEventListener("click",(ev)=>{
         }
     }
 
-    const pintarGaleriaDes=async (id)=>{
+    const pintarGaleriaDes=async (id,lugar)=>{
+    
         let urlBusqueda="";
         if(id==fotoCat1.id){
-            urlBusqueda="search?query=Mountain";
+            urlBusqueda="search/?page=4&per_page=15&query=Mountain";
         }else if(id==fotoCat2.id){
-            urlBusqueda="search?query=Ocean";
+            urlBusqueda="search/?page=4&per_page=15&query=Ocean";
         }else if(id==fotoCat3.id){
-            urlBusqueda="search?query=Road";
+            urlBusqueda="search/?page=4&per_page=15&query=Road";
+        }else if(lugar=="buscador"){
+            id=id[0].toUpperCase()+id.substring(1);
+            urlBusqueda=`search/?page=4&per_page=15&query=${id}`;
         }
+        
 
         try{
           
@@ -85,7 +100,6 @@ contDescrip.addEventListener("click",(ev)=>{
             galeria.innerHTML=``;
 
             photos.forEach((photo)=>{
-                console.log(photo.src.tiny);
                 galeria.innerHTML+=`
                 <img src="${photo.src.tiny}">`
             })
