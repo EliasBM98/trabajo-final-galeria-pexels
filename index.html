@@ -8,49 +8,61 @@
 </head>
 <body>
      <!-- - - - - - - -CABECERA- - - - - - - - - -->
-     <header id="header" class="header">
-        <h1 id="tituloGaleria">Galeria imagenes Miguel y Elías</h1>
-        <img id="fotoheader" src="assets/horizontales/2.jpg" alt="oceano">
+    <header id="header" class="header">
+        <section id="contenidosHeader" class="contenidosHeader">
+            <h1 id="tituloGaleria">Galeria imagenes Miguel y Elías</h1>
+
             <form 
             id="barraBusqueda"
             class="barraBusqueda"
             action="">
             
                 <label for="busqueda"></label>
-                <input type="text" id="busqueda" name="busqueda" placeholder="Busca tu foto...">
+                    <input type="text" id="busqueda" name="busqueda" placeholder="Busca tu foto...">
                 <label for="submit"></label>
-                <input type="submit" id="submit" name="submit">
-
-
+                    <input type="submit" id="submit" name="submit">
+                <label for="selector">Orientación</label>
+                    <select name="orientacion" id="orientacion">
+                            <option value="todas">Todas</option>
+                            <option value="horizontales">Horizontales</option>
+                            <option value="verticales">Verticales</option>
+                    </select>
             </form>
+        </section>
+        
+        <div id="contenedorFotoheader" class="contenedorFotoheader">
+            <img id="fotoheader" src="assets/horizontales/2.jpg" alt="oceano">
+        </div>
     </header>
  <!-- - - - - - - -CATEGORIAS- - - - - - - - - -->
     <section id="coleccionCategorias" class="coleccionCategorias">
-        <article id="categoria1" class="categoria1">
-            <h2>Montaña</h2>
-
+        <article id="categoria1" class="categorias">
+            
             <div id="contenedor1">
-                <img id="front1" src="" alt="">
+                <img id="front1" class="fotosCategoria" src="assets/horizontales/1.jpg" alt="Paisaje montañas">
             </div>
 
+            <h2 id="titulo1" class="titulosFoto">Montaña</h2>
 
         </article>
 
-        <article id="categoria2" class="categoria2">
-            <h2>Mar</h2>
-
+        <article id="categoria2" class="categorias">
+            
             <div id="contenedor2">
-                <img id="front2" src="" alt="">
+                <img id="front2" class="fotosCategoria" src="assets/horizontales/3.jpg" alt="atardecer en el mar">
             </div>
+
+            <h2 id="titulo2" class="titulosFoto">Mar</h2>
 
         </article>
 
-        <article id="categoria3" class="categoria3">
-            <h2>Carretera</h2>
+        <article id="categoria3" class="categorias">
 
             <div id="contenedor3">
-                 <img id="front2" src="" alt="">
+                 <img id="front3" class="fotosCategoria" src="assets/horizontales/5.jpg" alt="carretera hacia montaña con nuber">
             </div>
+
+            <h2 id="titulo3" class="titulosFoto">Carretera</h2>
          
         </article>
     </section>

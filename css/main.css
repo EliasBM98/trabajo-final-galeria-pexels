@@ -5,45 +5,117 @@
     box-sizing: border-box;
 }
 /*---------------HEADER---------------*/
+#header{
+    position:relative;
+    height: 15vh;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+    
+}
 
-#header {
+#contenidosHeader{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+
+#contenedorFotoheader{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
     width: 100vw;
-   position: relative;
+    z-index: 1;
 }
 
-#tituloGaleria{
-    position: relative;
-
-}
-
-#barraBusqueda{
-    position: relative;
-
-}
 
 #fotoheader{
-    max-width: 100%;
-    position: absolute;
-    top: 0px;
+    display: flex;
+    justify-content: center;
+    height: 15vw;
 }
+
+
 /*---------------CATEGORIAS---------------*/
 #coleccionCategorias{
-    position: relative;
-    top: 20vw;
+    background-color: yellowgreen;
+    display: flex;
+    height: 19vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
 }
+
+#coleccionCategorias > * {
+    display: flex;
+
+      
+}
+
+
+/*-----CATEGORIAS-----*/ /*Contenedor titulo y foto*/
+.categorias{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+    
+}
+
+
+/*-----Fotos-----*/
+.fotosCategoria{
+    display: flex;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 5px;
+
+}
+
+
+
+/*-----TITULOS-----*/
+.titulosFoto{
+    display: flex;
+    align-items: end;
+    
+    
+    
+}
+
+
+
+
+
 
 
 
 /*---------------768px---------------*/
 @media screen and (min-width: 768px){
+#coleccionCategorias{
+    flex-direction: column;
 
+}
 }
 
 /*768px*/
 
 /*---------------992px---------------*/
 @media screen and (min-width: 992px){
+    #coleccionCategorias{
+        flex-direction: row;
+    
+    }
 
 }
 
@@ -51,6 +123,10 @@
 
 /*---------------1200px---------------*/
 @media screen and (min-width: 1200px){
+    #coleccionCategorias{
+        flex-direction: row;
+    
+    }
 
 }
 
