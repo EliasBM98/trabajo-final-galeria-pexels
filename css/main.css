@@ -118,11 +118,11 @@
 .paginacion{
     background-color:rgb(57, 139, 211);
     text-align: center;
-
 }
 .pagina{
-  list-style-type: none;
-  display: inline-block;
+    list-style-type: none;
+    display: inline-block;
+  
 }
 
 

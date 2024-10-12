@@ -20,7 +20,7 @@
                 <label for="busqueda"></label>
                     <input type="text" id="busqueda" name="busqueda" placeholder="Busca tu foto...">
                 <label for="submit"></label>
-                    <input type="submit" id="submit" name="submit">
+                    <button id="submit">Buscar</button>
                 <label for="selector">Orientación</label>
                     <select name="orientacion" id="orientacion">
                             <option value="">Todas</option>
@@ -86,10 +86,8 @@
     <section>
 
         <h2 id="tituloGaleria">Galeria de imagenes</h2>
-        <article id="galeria" class="galeria">
+        <article id="galeria" class="galeria" data-categoria="" data-direccion="">
 
-      
-        <article id="galeria" class="galeria">
             
             
 
@@ -100,14 +98,14 @@
 
  <!-- - - - - - - -PAGINACION- - - - - - - - - -->
 
-    <section class="paginacion">
+    <section id="paginacion" class="paginacion">
         <ul>
             <li id="anterior" class="pagina">Anterior</li>
-            <li class="pagina">1</li>
-            <li class="pagina">2</li>
-            <li class="pagina">3</li>
-            <li class="pagina">4</li>
-            <li class="pagina">5</li>
+                <li id="op1" class="pagina">1</li>
+                <li id="op2" class="pagina">2</li>
+                <li id="op3" class="pagina">3</li>
+                <li id="op4" class="pagina">4</li>
+                <li id="op5" class="pagina">5</li> 
             <li id="siguiente" class="pagina">Siguiente</li>
         </ul>
     </section>
