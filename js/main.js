@@ -74,7 +74,7 @@ paginacion.addEventListener("click",(ev)=>{
         }
     }
 
-    //funcion para 
+    //funcion para  para pintar la tabla una vez se entra a la pagina por primera vez
     const pintarTablaVacia=async (item)=>{
         try{
 
@@ -92,6 +92,8 @@ paginacion.addEventListener("click",(ev)=>{
         }
     }
 
+    //funcion que pinta que la galeria de imagenes, dependiendo de los valores que va recibiendo, ya sea la barra de busqueda o las imagenes
+    // de descripciones
     const pintarGaleriaDes=async (id,direccion,pagina)=>{
 
         galeria.dataset.direccion=direccion;
