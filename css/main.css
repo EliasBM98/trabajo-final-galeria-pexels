@@ -3,19 +3,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 
 /*---------------HEADER---------------*/
 #header{
     position:relative;
-    height: 15vh;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-   
+    width: 100vw;
+    height: 15vh;
+    min-width: 200px;
+
 }
 
 #contenidosHeader{
@@ -23,37 +26,92 @@
     z-index: 2;
     display: flex;
     justify-content: space-around;
-    
-}
 
+}
 
 #contenedorFotoheader{
     position:absolute;
     display: flex;
     flex-direction: column;
-    top: 0;
-    left: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 1;
 }
 
-
 #fotoheader{
-    display: flex;
-    justify-content: center;
-    height: 15vw;
+    width: 100%;
+    height: 100%;
 }
+
+/*-----barra busqueda-----*/
+#busqueda{
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 0.2em;
+    background-color: #eeeeee;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    opacity: 85%;
+}
+#busqueda:focus {
+    background-color: white;
+    box-shadow: 13px 13px 100px #969696,
+  }
+#busqueda:hover{
+        box-shadow: 
+        inset 2px 2px 5px #bcbcbc, 
+        inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+
+/*-----boton-----*/
+#submit{
+    background-color: #e0e0e0;
+    border-radius: 30px;
+    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+    color: #4d4d4d;
+    cursor: pointer;
+
+    padding: 2px 10px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid rgb(206, 206, 206);
+}
+#submit:hover{
+    box-shadow: 
+    inset 2px 2px 5px #bcbcbc, 
+    inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+/*-----selector-----*/
+#orientacion{
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 0.2em;
+    background-color: #eeeeee;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    opacity: 85%;
+}
+#orientacion:focus {
+    background-color: white;
+    box-shadow: 13px 13px 100px #969696,
+  }
+#orientacion:hover {
+        box-shadow: 
+        inset 2px 2px 5px #bcbcbc, 
+        inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
 
 
 /*---------------CATEGORIAS---------------*/
 #coleccionCategorias{
-    background-color: yellowgreen;
     display: flex;
-    height: 19vw;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 100vw;
 
+    position: relative;
 }
 
 #coleccionCategorias > * {
@@ -61,32 +119,49 @@
 }
 
 
-/*-----CATEGORIAS-----*/ /*Contenedor titulo y foto*/
+/*-----contenedores titulo+foto-----*/ 
 .categorias{
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-  
+    width: 10em;
+    margin: 10px;
 }
 
-
-/*-----Fotos-----*/
+/*-----fotos-----*/
 .fotosCategoria{
-    display: flex;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 100%;
     border-radius: 5px;
-
+}
+.fotosCategoria:hover {
+    box-shadow: 
+    inset 2px 2px 5px #bcbcbc, 
+    inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
 }
 
 
+/*-----fondo degradado-----*/
 
-/*-----TITULOS-----*/
+#contenedorFotocategorias{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+#fondoDegradado{
+    width: 100%;
+    height: 100%;
+}
+
+/*-----titulos-----*/
 .titulosFoto{
     display: flex;
     align-items: end;
-  
 }
 
 
@@ -102,23 +177,22 @@
 
 }
 
-
 .galeria > * {
     border-radius: 5px;
-
 }
-
 
 #tituloGaleria{
     text-align: center;
     margin: 10px;
 }
 
+
+
+
 /*---------------PAGINACION---------------*/
 .paginacion{
-    background-color:rgb(57, 139, 211);
     text-align: center;
-
+    margin: 15px;
 }
 .pagina{
   list-style-type: none;
@@ -127,16 +201,32 @@
 
 
 
+/*---------------TIPOGRAFIA---------------*/
+.h1{
+    color: rgb(247, 198, 0);
+    font-family: 'Times New Roman', Times, serif;
+}
+.h2{
+    color: rgb(31, 31, 31);
+    font-family: 'Times New Roman', Times, serif;
+
+}
+#tituloGaleria{
+    color: rgb(31, 31, 31);
+    font-family: 'Times New Roman', Times, serif;
+}
+.paginacion{
+    color: rgb(31, 31, 31);
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 
 
 /*---------------768px---------------*/
 @media screen and (min-width: 768px){
-    #coleccionCategorias{
-        flex-direction: column;
-    }
-    .galeria{
-        
+
+    .categorias{
+        width: 10em;
     }
 
 }
@@ -145,11 +235,12 @@
 
 /*---------------992px---------------*/
 @media screen and (min-width: 992px){
-    #coleccionCategorias{
-        flex-direction: row;
+    
+    .categorias{
+        width: 15em;
     }
-    .galeria{
-        
+    .h1, .h2, #tituloGaleria{
+        font-size: 2em;
     }
 
 }
@@ -158,12 +249,11 @@
 
 /*---------------1200px---------------*/
 @media screen and (min-width: 1200px){
-    #coleccionCategorias{
-        flex-direction: row;
-    }
-    .galeria{
 
+    .categorias{
+        width: 20em;
     }
+
 
 }
 
