@@ -10,7 +10,7 @@
      <!-- - - - - - - -CABECERA- - - - - - - - - -->
     <header id="header" class="header">
         <section id="contenidosHeader" class="contenidosHeader">
-            <h1>Galeria imagenes Miguel y Elías</h1>
+            <h1 class="h1">Galeria imagenes Miguel y Elías</h1>
 
             <form 
             id="barraBusqueda"
@@ -22,7 +22,12 @@
                 <label for="submit"></label>
                     <button id="submit">Buscar</button>
                 <label for="selector">Orientación</label>
+
+                    <button id="submit" name="submit">Buscar</button>
+                <label for="selector"></label>
+
                     <select name="orientacion" id="orientacion">
+                            <option value="">Orientación</option>
                             <option value="">Todas</option>
                             <option value="landscape">Horizontales</option>
                             <option value="portrait">Verticales</option>
@@ -46,7 +51,7 @@
 
             </div>
 
-            <h2 id="titulo1" class="titulosFoto">Montaña</h2>
+            <h2 id="titulo1" class="titulosFoto h2">Montaña</h2>
 
         </article>
 
@@ -60,7 +65,7 @@
 
             </div>
 
-            <h2 id="titulo2" class="titulosFoto">Mar</h2>
+            <h2 id="titulo2" class="titulosFoto h2">Mar</h2>
 
         </article>
 
@@ -77,9 +82,12 @@
 
             </div>
 
-            <h2 id="titulo3" class="titulosFoto">Carretera</h2>
+            <h2 id="titulo3" class="titulosFoto h2">Carretera</h2>
          
         </article>
+        <div id="contenedorFotocategorias">
+            <img id="fondoDegradado" src="assets/horizontales/fondocategorias.jpg" alt="degradado">
+        </div>
     </section>
 
  <!-- - - - - - - -GALERIAS- - - - - - - - - -->
@@ -87,10 +95,6 @@
 
         <h2 id="tituloGaleria">Galeria de imagenes</h2>
         <article id="galeria" class="galeria" data-categoria="" data-direccion="">
-
-            
-            
-
 
         </article>
     </section>
