@@ -192,11 +192,14 @@
 /*---------------PAGINACION---------------*/
 .paginacion{
     text-align: center;
+
+
     margin: 15px;
 }
 .pagina{
-  list-style-type: none;
-  display: inline-block;
+    list-style-type: none;
+    display: inline-block;
+  
 }
 
 

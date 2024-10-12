@@ -13,27 +13,45 @@ const fotoCat3=document.querySelector("#front3");//carretera
 
 const galeria=document.querySelector("#galeria");
 
+const paginacion=document.querySelector("#paginacion");
+const pag1=document.querySelector("#op1");
+const pag2=document.querySelector("#op2");
+const pag3=document.querySelector("#op3");
+const pag4=document.querySelector("#op4");
+const pag5=document.querySelector("#op5");
+
 const urlBase="https://api.pexels.com/v1";
 const urlInicioMar="photos/189349";
 const urlInicioMontaña="photos/417173";
 const urlInicioCarretera="photos/56832";
 
+let pagina_inicio=1;
+let imagenes_totales=0;    
+
 contDescrip.addEventListener("click",(ev)=>{
     if(ev.target.matches(`img`)){
         let id=ev.target.dataset.categoria;
-        console.log({id});
-        pintarGaleriaDes(id,"descripcion");
+        pintarGaleriaDes(id,"");
     }
 })
 
 btnSubmit.addEventListener("click",(ev)=>{
     ev.preventDefault();
     let id = buscador.value;
-    pintarGaleriaDes(id,"buscador");
+    pintarGaleriaDes(id,"");
 })
 
 orientacion.addEventListener("change",(ev)=>{
     console.log(ev.target.value);
+    let direccion= ev.target.value;
+    pintarGaleriaDes("",direccion);
+})
+
+paginacion.addEventListener("click",(ev)=>{
+    if(ev.target.matches(`li`)){
+        let pagina =ev.target.id;
+        pintarGaleriaDes("","",pagina);
+    }
 })
 
     //Conexion a la API, recibiendo las diferentes urls
@@ -56,21 +74,11 @@ orientacion.addEventListener("change",(ev)=>{
         }
     }
 
-    //funcion para 
+    //funcion para  para pintar la tabla una vez se entra a la pagina por primera vez
     const pintarTablaVacia=async (item)=>{
         try{
-            //const recibido=`search?query=${busqueda}`;
 
             const res = await conexion(item);
-           
-           // console.log(res.id+" prueba")
-            //console.log(res.src.medium);
-            //res.photos[0].src.large
-            //const aux= res.photos;
-            //console.log(aux[0].src.landscape);
-            //console.log(aux[1].src.landscape);
-            //console.log(aux[2].src.landscape);
-            //console.log({res});
 
             if(res.id==417173){
                 fotoCat1.src=res.src.medium;
@@ -84,23 +92,42 @@ orientacion.addEventListener("change",(ev)=>{
         }
     }
 
-    const pintarGaleriaDes=async (id,lugar)=>{
-    
-        let urlBusqueda=`search/?page=4&per_page=25&query=${id}`;
-       /* if(id==fotoCat1.id){
-            urlBusqueda="search/?page=4&per_page=25&query=Mountain";
-        }else if(id==fotoCat2.id){
-            urlBusqueda="search/?page=4&per_page=25&query=Ocean";
-        }else if(id==fotoCat3.id){
-            urlBusqueda="search/?page=4&per_page=25&query=Road";
-        }else if(lugar=="buscador"){
-            urlBusqueda=`search/?page=4&per_page=25&query=${id}`;
-        }*/
-        
+    //funcion que pinta que la galeria de imagenes, dependiendo de los valores que va recibiendo, ya sea la barra de busqueda o las imagenes
+    // de descripciones
+    const pintarGaleriaDes=async (id,direccion,pagina)=>{
+
+        galeria.dataset.direccion=direccion;
+
+        if(id!=""){
+            galeria.dataset.categoria=id;
+        }else if(id=="" && direccion==""){  
+            if(pagina==="anterior" || pagina==="siguiente"){
+                if(pagina=="siguiente" && imagenes_totales/25>pagina_inicio){
+                    pag1.textContent++;
+                    pag2.textContent++;
+                    pag3.textContent++;
+                    pag4.textContent++;
+                    pag5.textContent++;
+                    ++pagina_inicio;
+                }else if(pagina=="anterior" && pagina_inicio>1){
+                    pag1.textContent--;
+                    pag2.textContent--;
+                    pag3.textContent--;
+                    pag4.textContent--;
+                    pag5.textContent--;
+                    --pagina_inicio;
+                } 
+            }
+        }
+
+        console.log(pagina_inicio);
+
+        let urlBusqueda=`search/?page=${pagina_inicio}&per_page=25&query=${galeria.dataset.categoria}&orientation=${galeria.dataset.direccion}`;
 
         try{
           
             const res=await conexion(urlBusqueda);
+            imagenes_totales=res.total_results;
             const{photos}=res
 
             galeria.innerHTML=``;
