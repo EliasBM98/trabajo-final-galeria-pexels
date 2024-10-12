@@ -144,5 +144,4 @@ paginacion.addEventListener("click",(ev)=>{
     pintarTablaVacia(urlInicioMar);
     pintarTablaVacia(urlInicioMontaña);
     pintarTablaVacia(urlInicioCarretera);
-
     })//LOAD
