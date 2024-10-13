@@ -84,7 +84,7 @@
                     const data =await respuesta.json();
                     return data;
                 }else{
-                    throw(Error("Explosion en la llamada"));
+                    throw(Error("Error en la llamada"));
                 }
             }catch(error){
                 throw(error.message);
@@ -118,7 +118,7 @@
                     contDescrip.append(artDescripcion);
             
             }catch(error){
-                console.log(error.message);
+                alert(error.message);
             }
         }
 
@@ -189,7 +189,7 @@
 
 
             }catch(error){
-                console.log(error.message);
+                alert(error.message);
             }
 
 
