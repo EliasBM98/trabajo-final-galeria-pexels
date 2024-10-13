@@ -12,6 +12,7 @@ const fotoCat2=document.querySelector("#front2");//mar
 const fotoCat3=document.querySelector("#front3");//carretera
 
 const galeria=document.querySelector("#galeria");
+const tituloGaleria=document.querySelector("#tituloGaleria")
 
 const paginacion=document.querySelector("#paginacion");
 const pag1=document.querySelector("#op1");
@@ -29,7 +30,7 @@ let pagina_inicio=1;
 let imagenes_totales=0;    
 
 contDescrip.addEventListener("click",(ev)=>{
-    if(ev.target.matches(`img`)){
+    if(ev.target.matches(`.fotosCategoria`)){
         let id=ev.target.dataset.categoria;
         pintarGaleriaDes(id,"");
     }
@@ -141,6 +142,12 @@ paginacion.addEventListener("click",(ev)=>{
             console.log(error.message);
         }
 
+    let palabra = `${galeria.dataset.categoria}`;
+    tituloGaleria.innerHTML=`Imagenes de ${palabra.charAt(0).toUpperCase()}${palabra.slice(1)}`
+
+
+
+    
     }
 
     pintarTablaVacia(urlInicioMar);
