@@ -119,7 +119,7 @@
 
             if(id!=""){
                 galeria.dataset.categoria=id;
-            }else if(id=="" && direccion==""){  
+            }else if(id=="" && direccion==""){ 
                 if(pagina==="anterior" || pagina==="siguiente"){
                     if(pagina=="siguiente" && imagenes_totales/25>pagina_inicio){
                         pag1.textContent++;
@@ -137,9 +137,26 @@
                         --pagina_inicio;
                     } 
                 }
-            }
 
-            console.log(pagina_inicio);
+                switch(pagina){
+                    case "op1":
+                        pagina_inicio=pag1.textContent;
+                        break;
+                    case "op2":
+                        pagina_inicio=pag2.textContent;
+                        break;
+                    case "op3":
+                        pagina_inicio=pag3.textContent;
+                        break;
+                    case "op4":
+                        pagina_inicio=pag4.textContent;
+                        break;
+                    case "op5":
+                        pagina_inicio=pag5.textContent;
+                        break;
+                }
+
+            }
 
             let urlBusqueda=`search/?page=${pagina_inicio}&per_page=25&query=${galeria.dataset.categoria}&orientation=${galeria.dataset.direccion}`;
 
@@ -160,10 +177,6 @@
     let palabra = `${galeria.dataset.categoria}`;
     tituloGaleria.innerHTML=`Imagenes de ${palabra.charAt(0).toUpperCase()}${palabra.slice(1)}`
 
-
-
-    
-    }
 
             }catch(error){
                 console.log(error.message);
