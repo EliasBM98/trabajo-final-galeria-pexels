@@ -7,7 +7,7 @@
 }
 
 
-/*---------------HEADER---------------*/
+/*---------------HEADER---------------*/ /*Forma*/
 #header{
     position:relative;
     overflow: hidden;
@@ -31,8 +31,6 @@
 
 #contenedorFotoheader{
     position:absolute;
-    display: flex;
-    flex-direction: column;
     width: 100%;
     z-index: 1;
 }
@@ -42,7 +40,7 @@
     height: 100%;
 }
 
-/*-----barra busqueda-----*/
+/*------------barra busqueda------------*/ /*Estilo*/
 #busqueda{
     border: none;
     outline: none;
@@ -63,7 +61,7 @@
 }
 
 
-/*-----boton-----*/
+/*--------------boton--------------*/ /*Estilo*/
 #submit{
     background-color: #e0e0e0;
     border-radius: 30px;
@@ -81,7 +79,7 @@
     inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
 }
 
-/*-----selector-----*/
+/*--------------selector------------*/ /*Estilo*/
 #orientacion{
     border: none;
     outline: none;
@@ -103,7 +101,7 @@
 
 
 
-/*---------------CATEGORIAS---------------*/
+/*---------------CATEGORIAS---------------*/ /*Forma*/
 #coleccionCategorias{
     display: flex;
     flex-direction: row;
@@ -119,7 +117,7 @@
 }
 
 
-/*-----contenedores titulo+foto-----*/ 
+/*--------contenedores titulo+foto--------*/ /*Forma*/
 .categorias{
     position: relative;
     z-index: 2;
@@ -131,7 +129,7 @@
     margin: 10px;
 }
 
-/*-----fotos-----*/
+/*--------------fotos---------------*/ /*Estilo*/
 .fotosCategoria{
     max-width: 100%;
     border-radius: 5px;
@@ -143,7 +141,7 @@
 }
 
 
-/*-----fondo degradado-----*/
+/*----------fondo degradado----------*/ /*Forma*/
 
 #contenedorFotocategorias{
     position:absolute;
@@ -158,7 +156,7 @@
     height: 100%;
 }
 
-/*-----titulos-----*/
+/*-----titulos-----*/ /*Forma*/
 .titulosFoto{
     display: flex;
     align-items: end;
@@ -166,7 +164,7 @@
 
 
 
-/*---------------GALERIA---------------*/
+/*---------------GALERIA---------------*/ /*Forma*/
 .galeria{
     width: 100vw;
     display:flex;
@@ -179,6 +177,7 @@
 
 .galeria > * {
     border-radius: 5px;
+
 }
 
 #tituloGaleria{
@@ -189,11 +188,9 @@
 
 
 
-/*---------------PAGINACION---------------*/
-.paginacion{
+/*---------------PAGINACION---------------*/ /*Forma*/
+.paginacion{    
     text-align: center;
-
-
     margin: 15px;
 }
 .pagina{
@@ -204,12 +201,14 @@
 
 
 
-/*---------------TIPOGRAFIA---------------*/
+/*---------------TIPOGRAFIA---------------*/ /*Estilo*/
 .h1{
     color: rgb(247, 198, 0);
     font-family: 'Times New Roman', Times, serif;
 }
 .h2{
+    text-align: center;
+    margin: 10px;
     color: rgb(31, 31, 31);
     font-family: 'Times New Roman', Times, serif;
 
@@ -225,7 +224,10 @@
 
 
 
-/*---------------768px---------------*/
+
+/*------------------------------------
+-----------------768px----------------
+--------------------------------------*/
 @media screen and (min-width: 768px){
 
     .categorias{
@@ -236,7 +238,10 @@
 
 /*768px*/
 
-/*---------------992px---------------*/
+
+/*------------------------------------
+-----------------992px----------------
+--------------------------------------*/
 @media screen and (min-width: 992px){
     
     .categorias{
@@ -250,7 +255,10 @@
 
 /*992px*/
 
-/*---------------1200px---------------*/
+
+/*------------------------------------
+-----------------1200px---------------
+--------------------------------------*/
 @media screen and (min-width: 1200px){
 
     .categorias{

@@ -9,6 +9,7 @@
     const contDescrip=document.querySelector("#coleccionCategorias");
 
     const galeria=document.querySelector("#galeria");
+    const tituloGaleria=document.querySelector("#tituloGaleria")  
 
     const paginacion=document.querySelector("#paginacion");
     const pag1=document.querySelector("#op1");
@@ -31,7 +32,7 @@
 
     //Listener que se encarga del evento CLICK de las imagenes de descripcion (road,mountain,ocean) y hacer sus respectivas busquedas
     contDescrip.addEventListener("click",(ev)=>{
-        if(ev.target.matches(`img`)){
+        if(ev.target.matches(`.fotosCategoria`)){
             let id=ev.target.dataset.categoria;
             pintarGaleriaDes(id,"");
         }
@@ -41,6 +42,7 @@
     btnSubmit.addEventListener("click",(ev)=>{
         ev.preventDefault();
         let id = buscador.value;
+
         pintarGaleriaDes(id,"");
     })
 
@@ -154,9 +156,19 @@
                     <img src="${photo.src.small}">`
                 })
 
+
+    let palabra = `${galeria.dataset.categoria}`;
+    tituloGaleria.innerHTML=`Imagenes de ${palabra.charAt(0).toUpperCase()}${palabra.slice(1)}`
+
+
+
+    
+    }
+
             }catch(error){
                 console.log(error.message);
             }
+
 
         }
 
