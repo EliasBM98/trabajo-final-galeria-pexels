@@ -27,6 +27,11 @@
     //Variables auxiliares que usaremos en galeria para irnos moviendo entre las imagenes mostradas en cada busqueda
     let pagina_inicio=1;
     let imagenes_totales=0; 
+
+    //Expresion regular para la validacion de la entrada del usuario 
+    const regExp ={
+        input:/^[a-zA-Z]+$/}
+    
     
     //Declaracion de los diferentes eventos que tendra la pagina web que dependiendo que sucede nos enviara a una u otra funcion con diferentes valores
 
@@ -38,12 +43,17 @@
         }
     })
 
-    //Listener del boton del buscador que busca imagenes segun la palabra usada (palabra debe estar en ingles)
+    //Listener del boton del buscador que busca imagenes segun la palabra usada y comprobada(palabra debe estar en ingles)
     btnSubmit.addEventListener("click",(ev)=>{
         ev.preventDefault();
         let id = buscador.value;
-
-        pintarGaleriaDes(id,"");
+        if(regExp.input.test(id)){
+            pintarGaleriaDes(id,"");
+        }else{
+            alert("Busqueda no valida, debes buscar en inglés");
+            buscador.value="";
+        
+        }
     })
 
     //Listener que se encarga del select que cambia la orientacion de las fotos en las busquedas
