@@ -10,7 +10,7 @@
      <!-- - - - - - - -CABECERA- - - - - - - - - -->
     <header id="header" class="header">
         <section id="contenidosHeader" class="contenidosHeader">
-            <h1>Galeria imagenes Miguel y Elías</h1>
+            <h1 class="h1">Galeria imagenes Miguel y Elías</h1>
 
             <form 
             id="barraBusqueda"
@@ -21,8 +21,11 @@
                     <input type="text" id="busqueda" name="busqueda" placeholder="Busca tu foto...">
                 <label for="submit"></label>
                     <button id="submit">Buscar</button>
-                <label for="selector">Orientación</label>
+
+                <label for="selector"></label>
+
                     <select name="orientacion" id="orientacion">
+                            <option value="">Orientación</option>
                             <option value="">Todas</option>
                             <option value="landscape">Horizontales</option>
                             <option value="portrait">Verticales</option>
@@ -36,50 +39,10 @@
     </header>
  <!-- - - - - - - -CATEGORIAS- - - - - - - - - -->
     <section id="coleccionCategorias" class="coleccionCategorias">
-        <article id="categoria1" class="categorias">
-            
-            <div id="contenedor1">
-
-                
-
-                <img id="front1" class="fotosCategoria" data-categoria="mountain">
-
-            </div>
-
-            <h2 id="titulo1" class="titulosFoto">Montaña</h2>
-
-        </article>
-
-        <article id="categoria2" class="categorias">
-            
-            <div id="contenedor2">
-
-               
-
-                <img id="front2" class="fotosCategoria" data-categoria="ocean">
-
-            </div>
-
-            <h2 id="titulo2" class="titulosFoto">Mar</h2>
-
-        </article>
-
-        <article id="categoria3" class="categorias">
-
-            <div id="contenedor3">
-
-
-                
-
-                 <img id="front3" class="fotosCategoria" data-categoria="road">
-
-             
-
-            </div>
-
-            <h2 id="titulo3" class="titulosFoto">Carretera</h2>
-         
-        </article>
+       <div id="contenedorFotocategorias">
+            <img id="fondoDegradado" src="assets/horizontales/fondocategorias.jpg" alt="degradado">
+        </div> 
+        
     </section>
 
  <!-- - - - - - - -GALERIAS- - - - - - - - - -->
@@ -87,10 +50,6 @@
 
         <h2 id="tituloGaleria">Galeria de imagenes</h2>
         <article id="galeria" class="galeria" data-categoria="" data-direccion="">
-
-            
-            
-
 
         </article>
     </section>
